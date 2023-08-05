@@ -1,0 +1,199 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400&display=swap" rel="stylesheet">
+
+    <title>Wishing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('https://images.unsplash.com/photo-1517330283827-2527c57981ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"');
+            background-position: center;
+            background-size: cover;
+        }
+
+        .Main {
+            width: 100%;
+            top: 50%;
+            position: absolute;
+            transform: translateY(-50%);
+            color: white;
+            text-align: center;
+        }
+
+
+        .Main h1 {
+            font-size: 32px;
+            margin-top: 80px;
+        }
+
+        .button {
+            width: 100px;
+            padding: 10px 0;
+            text-align: center;
+            margin: 10px;
+            border-radius: 25px;
+            font-weight: bold;
+            border: 2px solid #009688;
+            color: #fff;
+            background: transparent;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .button span {
+            background: #009688;
+            height: 100%;
+            width: 0;
+            border-radius: 25px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: -1;
+            transition: 0.5s;
+        }
+
+        .button:hover span {
+            width: 100%;
+        }
+
+        .button:hover {
+            border: none;
+        }
+
+        a.button {
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+
+        input {
+            font-size: 25px;
+            width: 200px;
+            bottom: 2px solid red;
+            border-radius: 20px;
+            padding-left: 10px;
+            text-align: center;
+            margin: 20px auto;
+
+        }
+
+        .content {
+            width: 50%;
+            padding: 4rem;
+            border-radius: 0.5rem;
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            font-style: 30px;
+            font: 100% / 1.5 Raleway, sans-serif;
+            text-align: center;
+            text-shadow: 0 0 9px blue,
+                0 0 7px #fff,
+                0 0 10px #fff;
+            display: none;
+            animation: lights 5s 750ms linear infinite;
+            letter-spacing: 2px;
+            background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+        }
+
+        .heart {
+            animation: zoom 0.5s linear;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes lights {
+            0% {
+                color: hsl(230, 40%, 80%);
+                text-shadow:
+                    0 0 1em hsla(320, 100%, 50%, 0.2),
+                    0 0 0.125em hsla(320, 100%, 60%, 0.3),
+                    -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+                    1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+            }
+
+            30% {
+                color: hsl(230, 80%, 90%);
+                text-shadow:
+                    0 0 1em hsla(320, 100%, 50%, 0.5),
+                    0 0 0.125em hsla(320, 100%, 60%, 0.5),
+                    -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+                    0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+            }
+
+            40% {
+                color: hsl(230, 100%, 95%);
+                text-shadow:
+                    0 0 1em hsla(320, 100%, 50%, 0.5),
+                    0 0 0.125em hsla(320, 100%, 90%, 0.5),
+                    -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),
+                    0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
+            }
+
+            70% {
+                color: hsl(230, 80%, 90%);
+                text-shadow:
+                    0 0 1em hsla(320, 100%, 50%, 0.5),
+                    0 0 0.125em hsla(320, 100%, 60%, 0.5),
+                    0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+                    -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+            }
+
+            100% {
+                color: hsl(230, 40%, 80%);
+                text-shadow:
+                    0 0 1em hsla(320, 100%, 50%, 0.2),
+                    0 0 0.125em hsla(320, 100%, 60%, 0.3),
+                    1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+                    -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+            }
+
+        }
+    </style>
+
+    <script>
+        function Show() {
+            var name = document.getElementById('name').value;
+
+            if (document.getElementById('name').value == "") {
+                alert('Please Type Your Name');
+            }
+            else {
+                document.getElementById('addname').innerHTML = name;
+                document.getElementById('m1').style.display = "none";
+                document.getElementById('c1').style.display = "block";
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="Main" id="m1">
+        <h1>ENTER YOUR NAME</h1>
+        <input type="text" placeholder="Enter Name" id="name">
+        <br>
+        <button class="button" onclick="Show()"><span></span>CLICK</button>
+    </div>
+    <div class="content" id="c1">
+        <h1>I</h1>
+        <h1>MISS</h1>
+        <h1>YOU</h1>
+        <h2 id="addname"></h2>
+        <h1 class="heart">❤</h1>
+        <br><br>
+        <a class="button" href='pulsingHeart.html'><span></span>Click here</a>
+    </div>
+</body>
+
+</html>
